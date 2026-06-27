@@ -30,13 +30,13 @@ void load(VM *vm, size_t index) {
 }
 
 void add(VM *vm) {
-	Value v2 = pop(vm);
-	Value v1 = pop(vm);
+    Value rhs = pop(vm);
+    Value lhs = pop(vm);
 
-	if(v1.type == INTEGER && v2.type == INTEGER) {
+	if(lhs.type == INTEGER && rhs.type == INTEGER) {
 		Value v3 = {0};
 		v3.type = INTEGER;
-		v3.int_value = v2.int_value + v1.int_value;
+		v3.int_value = lhs.int_value + rhs.int_value;
 		push(vm, v3);
 	} else {
 		fprintf(stderr, "ADD needs 2 integers in the stack\n");
@@ -45,13 +45,13 @@ void add(VM *vm) {
 }
 
 void sub(VM *vm) {
-	Value v2 = pop(vm);
-	Value v1 = pop(vm);
+    Value rhs = pop(vm);
+    Value lhs = pop(vm);
 
-	if(v1.type == INTEGER && v2.type == INTEGER) {
+	if(lhs.type == INTEGER && rhs.type == INTEGER) {
 		Value v3 = {0};
 		v3.type = INTEGER;
-		v3.int_value = v2.int_value - v1.int_value;
+		v3.int_value = lhs.int_value - rhs.int_value;
 		push(vm, v3);
 	} else {
 		fprintf(stderr, "SUB needs 2 integers in the stack\n");
@@ -60,13 +60,13 @@ void sub(VM *vm) {
 }
 
 void mul(VM *vm) {
-	Value v2 = pop(vm);
-	Value v1 = pop(vm);
+    Value rhs = pop(vm);
+    Value lhs = pop(vm);
 
-	if(v1.type == INTEGER && v2.type == INTEGER) {
+	if(lhs.type == INTEGER && rhs.type == INTEGER) {
 		Value v3 = {0};
 		v3.type = INTEGER;
-		v3.int_value = v2.int_value * v1.int_value;
+		v3.int_value = lhs.int_value * rhs.int_value;
 		push(vm, v3);
 	} else {
 		fprintf(stderr, "MUL needs 2 integers in the stack\n");
@@ -75,13 +75,13 @@ void mul(VM *vm) {
 }
 
 void divi(VM *vm) {
-	Value v2 = pop(vm);
-	Value v1 = pop(vm);
+    Value rhs = pop(vm);
+    Value lhs = pop(vm);
 
-	if(v1.type == INTEGER && v2.type == INTEGER) {
+	if(lhs.type == INTEGER && rhs.type == INTEGER) {
 		Value v3 = {0};
 		v3.type = INTEGER;
-		v3.int_value = v2.int_value / v1.int_value;
+		v3.int_value = lhs.int_value / rhs.int_value;
 		push(vm, v3);
 	} else {
 		fprintf(stderr, "DIV needs 2 integers in the stack\n");
@@ -90,18 +90,18 @@ void divi(VM *vm) {
 }
 
 void eq(VM *vm) {
-	Value v2 = pop(vm);
-	Value v1 = pop(vm);
+    Value rhs = pop(vm);
+    Value lhs = pop(vm);
 
-	if(v1.type == INTEGER && v2.type == INTEGER) {
+	if(lhs.type == INTEGER && rhs.type == INTEGER) {
 		Value v3 = {0};
 		v3.type = INTEGER;
-		v3.int_value = v2.int_value == v1.int_value;
+		v3.int_value = lhs.int_value == rhs.int_value;
 		push(vm, v3);
-	} else if(v1.type == STRING && v2.type == STRING) {
+	} else if(lhs.type == STRING && rhs.type == STRING) {
 		Value v3 = {0};
 		v3.type = STRING;
-		v3.int_value = v2.int_value == v1.int_value;
+		v3.int_value = lhs.int_value == rhs.int_value;
 		push(vm, v3);
 	} else {
 		fprintf(stderr, "EQ needs 2 integers in the stack\n");
@@ -110,28 +110,28 @@ void eq(VM *vm) {
 }
 
 void gt(VM *vm) {
-	Value v2 = pop(vm);
-	Value v1 = pop(vm);
+    Value rhs = pop(vm);
+    Value lhs = pop(vm);
 
-	if(v1.type == INTEGER && v2.type == INTEGER) {
+	if(lhs.type == INTEGER && rhs.type == INTEGER) {
 		Value v3 = {0};
 		v3.type = INTEGER;
-		v3.int_value = v2.int_value > v1.int_value;
+		v3.int_value = lhs.int_value > rhs.int_value;
 		push(vm, v3);
 	} else {
 		fprintf(stderr, "GT needs 2 integers in the stack\n");
         exit(EXIT_FAILURE);
-	}
+    }
 }
 
 void lt(VM *vm) {
-	Value v2 = pop(vm);
-	Value v1 = pop(vm);
+    Value rhs = pop(vm);
+    Value lhs = pop(vm);
 
-	if(v1.type == INTEGER && v2.type == INTEGER) {
+	if(lhs.type == INTEGER && rhs.type == INTEGER) {
 		Value v3 = {0};
 		v3.type = INTEGER;
-		v3.int_value = v2.int_value < v1.int_value;
+		v3.int_value = lhs.int_value < rhs.int_value;
 		push(vm, v3);
 	} else {
 		fprintf(stderr, "LT needs 2 integers in the stack\n");
