@@ -1,10 +1,9 @@
-#include "lexer.h"
+#include "instruction.h"
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdio.h>
 #include <stdbool.h>
-#include "../bytecode/bytecode.h"
 
 static bool is_int(char *input, size_t len);
 static bool is_str(char *input, size_t len);

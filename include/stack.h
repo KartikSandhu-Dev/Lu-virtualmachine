@@ -1,8 +1,8 @@
 #ifndef STACK_H
 #define STACK_H
 
-#include "../vm/vm.h"
-#include "../bytecode/bytecode.h"
+#include "vm.h"
+#include "bytecode.h"
 #include <stdlib.h>
 
 void push(VM *vm, Value value);

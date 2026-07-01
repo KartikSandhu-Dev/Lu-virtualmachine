@@ -1,7 +1,7 @@
 #ifndef VM_H
 #define VM_H
 
-#include "../bytecode/bytecode.h"
+#include "bytecode.h"
 
 #define STACK_SIZE 1024
 #define PROGRAM_SIZE 1024

@@ -1,4 +1,4 @@
-#include "vm/vm.h"
+#include "vm.h"
 
 int main(int argc, char *argv[]) {
 	char *filepath = argv[1];

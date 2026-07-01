@@ -1,6 +1,6 @@
 #include "vm.h"
-#include "../lexer/lexer.h"
-#include "../stack/stack.h"
+#include "instruction.h"
+#include "stack.h"
 
 void vm_init(VM *vm, char *filepath) {
 	vm->code_size = 0;
